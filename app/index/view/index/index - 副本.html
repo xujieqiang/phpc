@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <title>"我最喜爱的老师"第三轮网上投票</title>
+
+   <link rel="stylesheet" href="/tp4/public/static/layui/css/layui.css"  media="all">
+
+    <script>
+function showSite(str)
+{
+   // if (str=="")
+   // {
+   //     document.getElementById("txtHint").innerHTML="";
+   //     return;
+   // } 
+    if (window.XMLHttpRequest)
+    {
+        // IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+        xmlhttp=new XMLHttpRequest();
+    }
+    else
+    {
+        // IE6, IE5 浏览器执行代码
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.onreadystatechange=function()
+    {
+        if (xmlhttp.readyState==4 && xmlhttp.status==200)
+        {
+            document.getElementById("txtHint").innerHTML=xmlhttp.responseText;
+        }
+    }
+    xmlhttp.open("GET","/tp4/public/index/index/cl?q="+str,true);
+    xmlhttp.send();
+}
+</script>
+  </head>
+
+  <body >
+   
+    <div class="layui-container">
+
+      <form class="form-signin" method="POST" action="/tp4/public/index/index/shujucl"  target="rss" name="ff" id="form1">
+        				
+				
+		<div  class="row">
+		<table class="layui-table" lay-even="" lay-skin="nob">
+		<tr><td   height=120 background="/tp4/public/static/pic/banner3.jpg"	  style="bold"	><font size=3  >古城中学第八届“我最喜爱的老师”第三轮网上投票</font></td></tr>
+		
+		</table>
+		<table class="layui-table" lay-even="" lay-skin="nob">
+		<tr><td  ><font  >
+		<p>
+		*同学们，老师们，第八届“我最喜爱的老师”第三轮网上评选活动开始啦！请你把珍贵的两票投给你最喜爱的老师吧！投票时间：2020年4月28-5月7日。投票方式：网络投票，找到自己的年级，选择两位老师即可，写上自己的名字（统计数据只有工会可以查阅，其他人是看不见的）。</p></font></td> </tr>
+		</table>
+		</div>
+		 
+		<div  class="row">
+		<table  class="layui-table"  lay-skin="line">
+			
+			 
+			<tr><td width="30%">你所在的年级：</td><td><select name="njj" onchange="showSite(this.value)">
+			<option value="">选择年级</option>
+			<option value="7" >初一</option>
+			<option value="8">初二</option>
+			<option value="9">初三</option>
+			</select></td></tr>
+			<tr><td>你的身份：</td><td><input type="radio" name="sf" value="xs" />学生   <input type="radio" name="sf" value="ls" /> 老师</td></tr>
+
+
+			
+			
+				<tr><td>你的姓名</td><td><input type="text"  name="xm" required /></td></tr>
+			<tr><td colspan=2  bgcolor="whitesmoke">最喜欢的老师名单</td></tr>
+			<tr><td>选择两位你最喜欢的老师</td><td>
+			 <div id="txtHint"> </div></td></tr>
+				<tr><td></td><td><input  class="layui-btn  layui-btn-lg"  type="submit" name=" "  value="提交"    /></td></tr>
+			 
+		</table>
+		</div>
+		
+		<div class="layui-container">
+          <label>
+            注：每项必填,信息提示如下：
+          </label>
+		  <label>
+            
+          </label>
+        </div>
+		</form>
+		<div  class="row" >
+		<table  class="layui-table"  lay-skin="line">
+		<tr><td  colspan=2>
+		<iframe name="rss" id="myfr" style="display:block" style="width:150" frameborder="0"    ></iframe>
+		</td></tr>
+		</table>
+		</div>
+		
+        </div>
+		<div class="layui-container">
+          <label>
+            © 2009-2019 Aliyun.com 版权所有
+          </label>
+		  <label>
+             <a href="http://www.beian.miit.gov.cn">浙ICP备17046185号-1</a>
+          </label>
+        </div>
+        </div>
+        <!--label  >商品：</label><br-->
+		
+		
+		
+		
+          
+
+    </div> <!-- /container -->
+
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/tp4/public/static/bootstrap/js/ie10-viewport-bug-workaround.js"></script>
+	<script src="/tp4/public/static/layui/layui.js" charset="utf-8"></script>
+<!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
+<script>
+layui.use('element', function(){
+  var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
+  
+  //监听导航点击
+  element.on('nav(demo)', function(elem){
+    //console.log(elem)
+    layer.msg(elem.text());
+  });
+});
+</script>
+  </body>
+</html>

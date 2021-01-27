@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <title>晨跑统计</title>
+
+   <link rel="stylesheet" href="/ppics/layui/css/layui.css"  media="all">
+ <link rel="stylesheet" href="/ppics/bootstrap/css/c03.css"  media="all">
+ <script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
+ <script>
+ 
+
+ </script>
+  
+<style type="text/css">
+	/*body{
+		background-color:#EEF5F9;
+		margin-left: 10%;
+		margin-right: 10%;
+		margin-top: 20px;
+		padding: 10px 10px 10px 10px;
+		
+		
+	}
+	h1{
+		text-align: center;
+		margin-top: 30px;
+		margin-bottom: 40px;
+		font-family: "ms sans serif";
+	}
+	#dp{
+		
+		padding-left: 10px;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		padding-right: 10px;
+	}*/
+</style>
+  </head>
+  
+
+  <body >
+	  
+	 <div id="photo"><img src="/ppics/pic/paocao.jpg" width="400px" height="250px" /></div>
+	  
+	  <form action="{:url('index/index/successrs1')}" id="f1"   method="post" id="form1" >
+	  <div id="info">
+  <input type="hidden" name="ipv" id="ipc"  />
+   
+   <h2>古城中学晨跑打卡</h2>
+   <div id="kk"></div> 
+   <label id="la" > 输入姓名</label>
+  
+   
+   <p>
+   <input type="submit" name="s" id="but" value="打卡" />
+   
+    
+    
+   </p>
+   </div>
+   </form>
+   
+   
+   <script  type="text/javascript">
+	   var returnCitySN
+	   //document.write(returnCitySN["cip"]);
+	   var ipt=document.getElementById("ipc");
+	   ipt.setAttribute('value',returnCitySN["cip"]);
+	  
+		document.forms[0].submit();
+   
+   </script>
+  </body>
+
+</html>

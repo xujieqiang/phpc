@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <title>跑操打卡提示</title>
+
+   <link rel="stylesheet" href="/ppics/layui/css/layui.css"  media="all">
+
+    
+  </head>
+
+  <body >
+   <div class="layui-container">
+   <form class="form-signin"  >
+   <br />
+   <div class="row" align="center" width=380 height=380>
+		<img src="/ppics/pic/info.jpg"  height=300 width=310 />
+		</div>
+		
+		<br />
+   <div  class="row">
+		
+		
+		<table class="layui-table" lay-even="" lay-skin="nob">
+		<tr height="60"><td  align="center" bgcolor="#04564E"><font size="5" color="#f0f0f0" > {$info}</font> </td></tr>
+		<tr><td width="20%"  ><font size="4">{$name}&nbsp;&nbsp;</font> </td>
+		<tr><td width="20%"  ><font size="4"> {$msg}</font> </td>
+		<tr><td width="20%"  ><font size="4"> {$msg1}</font> </td>
+		
+		</div>
+   
+   
+   </form>
+   </div>
+   <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/ppics/bootstrap/js/ie10-viewport-bug-workaround.js"></script>
+	<script src="/ppics/layui/layui.js" charset="utf-8"></script>
+<!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
+<script>
+layui.use('element', function(){
+  var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
+  
+  //监听导航点击
+  element.on('nav(demo)', function(elem){
+    //console.log(elem)
+    layer.msg(elem.text());
+  });
+});
+</script>
+  </body>
+  </html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <title>晨跑统计</title>
+
+   <link rel="stylesheet" href="/ppics/layui/css/layui.css"  media="all">
+ <link rel="stylesheet" href="/ppics/bootstrap/css/c03.css"  media="all">
+ <script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
+ <script>
+ function getCookie(name){
+     var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)"); 
+     if(arr=document.cookie.match(reg)){
+         return unescape(arr[2]); 
+     }else{
+         return null; 
+     } 
+ } 
+  
+
+ </script>
+  
+<style type="text/css">
+	/*body{
+		background-color:#EEF5F9;
+		margin-left: 10%;
+		margin-right: 10%;
+		margin-top: 20px;
+		padding: 10px 10px 10px 10px;
+		
+		
+	}
+	h1{
+		text-align: center;
+		margin-top: 30px;
+		margin-bottom: 40px;
+		font-family: "ms sans serif";
+	}
+	#dp{
+		
+		padding-left: 10px;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		padding-right: 10px;
+	}*/
+</style>
+  </head>
+  
+
+  <body >
+	  {php} 
+	  
+	  if($nameval){
+		  $str=$_COOKIE['namecode']."   老师，你的设备已经被绑定";
+	  }else{
+		  $str="请注意，输入的名字会被绑定到手机！";
+		  $str1="  下次无需输入，扫码直接打卡。";
+	  } {/php}
+	 <div id="photo"><img src="/ppics/pic/paocao.jpg" width="400px" height="250px" /></div>
+	  
+	  <form action="{:url('index/index/chuli')}" id="f1" target="rss"  method="post" id="form1" >
+	  <div id="info">
+  
+   
+   <h2>古城中学晨跑打卡</h2>
+   <div id="kk"></div> 
+   <label id="la" > 输入姓名</label>
+  
+   <input type="text" name="uname" id="n" />
+   <p>
+   <input type="submit" name="s" id="but" value="打卡" />
+   <input type="hidden" name="ipv" id="ipc"  />
+    
+    <div id="warn"><font color="#B92C28">{$str}<br /><p>{$str1}</p> </font> </div>
+   </p>
+   </div>
+   </form>
+   
+   <iframe name="rss" id="info1" style="display:block" style="width:80" frameborder="0"    ></iframe>
+   <script  type="text/javascript">
+	   var returnCitySN
+	   //document.write(returnCitySN["cip"]);
+	   var ipt=document.getElementById("ipc");
+	   ipt.setAttribute('value',returnCitySN["cip"]);
+	  
+		
+   
+   </script>
+  </body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="/tp4/public/static/layui/css/layui.css"  media="all">
+<title>菜鸟教程(runoob.com)</title> 
+<script>
+function showSite(str)
+{
+   // if (str=="")
+   // {
+   //     document.getElementById("txtHint").innerHTML="";
+   //     return;
+   // } 
+    if (window.XMLHttpRequest)
+    {
+        // IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+        xmlhttp=new XMLHttpRequest();
+    }
+    else
+    {
+        // IE6, IE5 浏览器执行代码
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.onreadystatechange=function()
+    {
+        if (xmlhttp.readyState==4 && xmlhttp.status==200)
+        {
+            document.getElementById("txtHint").innerHTML=xmlhttp.responseText;
+        }
+    }
+    xmlhttp.open("GET","/tp/public/index/auser/cl?q="+str,true);
+    xmlhttp.send();
+}
+
+
+</script>
+</head>
+<body>
+	 <div class="layui-container">
+<table  class="layui-table" lay-even="" lay-skin="nob"><tr><td bgcolor="#9ACFEA">我是一个</td><td bgcolor="#9ACFEA">我是一个</td></tr></table>
+<form>
+<select name="users" onchange="showSite(this.value)">
+<option value="">选择年级</option>
+<option value="1" >初一</option>
+<option value="2">初二</option>
+<option value="3">初三</option>
+
+</select>
+<form>
+
+
+
+<!-- <p><b>在输入框中输入一个姓名:</b></p>
+<form> 
+姓名: <input type="text" onkeyup="showHint(this.value)">
+</form>
+<p>返回值: <span id="txtHint"></span></p>
+</form> -->
+<br>
+<font color="red"><div id="txtHint"><select name="usess" onchange=" ">
+<option value="">ss</option>
+<option value="1" >11</option>
+<option value="2">22</option>
+<option value="3">初三</option>
+
+</select></div></font>
+ </div>
+</body>
+</html>

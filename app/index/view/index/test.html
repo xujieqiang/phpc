@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <title>评选我最爱的老师</title>
+
+   <link rel="stylesheet" href="/tp2/public/static/layui/css/layui.css"  media="all">
+
+    <script>
+
+
+</script>
+  </head>
+
+  <body >
+   
+    <div class="layui-container">
+
+      <form   method="post" action="/tp2/public/index/index/shujucl"  target="list" id="form1">
+        
+		
+		
+		<strong>
+		
+		<div  class="row">
+		<table class="layui-table" lay-even="" lay-skin="nob">
+		<tr><td  bgcolor="#121110"   height=80		><font size=4  >长兴古城中学 “我最喜爱的老师” 评选活动</font></td></tr>
+		
+		</table>
+		<table class="layui-table" lay-even="" lay-skin="nob">
+		<tr><td  ><font  >*请认真填写信息</font></td> </tr>
+		</table>
+		</div>
+		 
+		<div  class="row">
+		<table  class="layui-table"  lay-skin="line">
+			
+		 
+			<tr><td>你所在的年级：</td><td><select name="nj" >
+			<option value="">选择年级</option>
+			<option value="1" >初一</option>
+			<option value="2">初二</option>
+			<option value="3">初三</option>
+			</select></td></tr>
+
+
+			
+			<tr><td>你所在的班级：</td><td>
+			<div id="txtHint"><select name="bj"  >
+				<option value="">选择年级</option>
+				<option value="01">(1)班</option>
+				<option value="02">(2)班</option>
+				<option value="03">(3)班</option>
+				<option value="04">(4)班</option>
+				<option value="05">(5)班</option>
+				<option value="06">(6)班</option>
+				<option value="07">(7)班</option>
+				<option value="08">(8)班</option>
+				<option value="09">(9)班</option>
+				<option value="10">(10)班</option>
+				<option value="11">(11)班</option>
+				<option value="12">(12)班</option>
+				<option value="13">(13)班</option>
+				<option value="14">(14)班</option></select>
+				
+				</div></td></tr>
+				<tr><td>你的姓名</td><td><input type="text"  name="xsxm" required /></td></tr>
+			<tr><td colspan=2 bgcolor="#1a2e44">最喜欢的老师名单</td></tr>
+			<tr><td>选择喜欢的老师</td><td>
+			 <select name="ls"  >
+				<option value="">选择老师</option>
+				<option value="01">(1)班</option>
+				<option value="02">(2)班</option>
+				<option value="03">(3)班</option>
+				<option value="04">(4)班</option>
+				<option value="05">(5)班</option>
+				<option value="06">(6)班</option>
+				<option value="07">(7)班</option>
+				<option value="08">(8)班</option>
+				<option value="09">(9)班</option>
+				<option value="10">(10)班</option>
+				<option value="11">(11)班</option>
+				<option value="12">(12)班</option>
+				<option value="13">(13)班</option>
+				<option value="14">(14)班</option></select></td></tr>
+				<tr><td></td><td><input type="submit" name=" "  value="确定"    /></td></tr>
+			 
+		</table>
+		</div>
+		
+		<div class="layui-container">
+          <label>
+            注：每项必填
+          </label>
+		  <label>
+           
+          </label>
+        </div>
+        </div>
+		<div class="layui-container">
+          <label>
+            
+          </label>
+		  <label>
+             
+          </label>
+        </div></form>
+        </div>
+        <!--label  >商品：</label><br-->
+		
+		<div  class="row" >
+		<iframe name="list" id="myfr" style="display:block"  frameborder="0"    ></iframe>
+		</div>
+		
+		
+          
+
+    </div> <!-- /container -->
+
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="__ROOT__/public/static/bootstrap/js/ie10-viewport-bug-workaround.js"></script>
+	<script src="__ROOT__/public/static/layui/layui.js" charset="utf-8"></script>
+<!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
+<script>
+layui.use('element', function(){
+  var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
+  
+  //监听导航点击
+  element.on('nav(demo)', function(elem){
+    //console.log(elem)
+    layer.msg(elem.text());
+  });
+});
+</script>
+  </body>
+</html>

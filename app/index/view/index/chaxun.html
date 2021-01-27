@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <title>古城中学跑操统计结果</title>
+
+   <link rel="stylesheet" href="/ppics/layui/css/layui.css"  media="all">
+
+    
+
+
+  </head>
+
+  <body >
+   
+    <div class="layui-container">
+
+      <form class="form-signin" method="POST"  >
+        				
+				
+		<div  class="row">
+		<table class="layui-table" lay-even="" lay-skin="nob">
+		<tr><td   height=240 background="/ppics/pic/paocao.jpg"	  style="bold"	><font size=3  >古城中学跑操查询统计</font></td></tr>
+		
+		</table>
+		<table class="layui-table" lay-even="" lay-skin="nob">
+		<tr><td  ><font  >*统计结果如下！</font></td> <td ><a href="#">  <img src="/ppics/pic/excel.jpg" width="30" height="30" /><font  >导出</font></a></td> </tr>
+		</table>
+		</div>
+		 
+		<div  class="row">
+		<table  class="layui-table"  lay-skin="line">
+			
+			
+			<thead><td>老师姓名</td><td>	参与次数</td></thead>
+			{foreach $d as $key=>$value}
+			
+			<tr bgcolor="#D6E9C6"><td colspan="2">月份：{$key}</td></tr>
+			{foreach $value as $k1=>$v1}
+			
+			{foreach $v1 as $k2=>$v2}{if $k2==1}
+			<tr ><td >{$v1[0]}</td><td >{$v1[1]}</td></tr>
+			{/if}
+			{/foreach}
+			{/foreach}
+
+
+			
+			
+			{/foreach}	
+			
+			 
+		</table>
+		</div>
+		
+		<div class="layui-container">
+          <label>
+            注： 
+          </label>
+		  <label>
+            
+          </label>
+        </div>
+		
+		<div class="layui-container">
+          <label>
+            © 2009-2019 Aliyun.com 版权所有
+          </label>
+		  <label>
+             <a href="http://www.beian.miit.gov.cn">浙ICP备17046185号-1</a>
+          </label>
+        </div>
+        </div>
+		</form>
+		
+
+
+		
+		
+        </div>
+		 
+        
+
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/ppics/bootstrap/js/ie10-viewport-bug-workaround.js"></script>
+	<script src="/ppics/layui/layui.js" charset="utf-8"></script>
+<!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
+<script>
+layui.use('element', function(){
+  var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
+  
+  //监听导航点击
+  element.on('nav(demo)', function(elem){
+    //console.log(elem)
+    layer.msg(elem.text());
+  });
+});
+</script>
+  </body>
+</html>
